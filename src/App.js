@@ -30,8 +30,10 @@ class App extends Component {
   }
 
   // ВНИМАНИЕ это обычный метод класса, НЕ НАДО ЕГО ДЕЛАТЬ СТРЕЛОЧНОЙ ФУНКЦИЕЙ
+  // ТУТ ОБЯЗАТЕЛЬНО ВСЁ ДЕЛАТЬ ЧЕРЕЗ ПРОВЕРКИ!!
+  // Порядок аргументов обязателен!!!!!!!!!!!!!!!
   componentDidUpdate(prevProp, prevState) {
-    // имеется ввиду что состояние собирается обновиться и nextTodos это новые 
+    // имеется ввиду что состояние собирается обновиться и nextTodos это новые
     const nextTodos = this.state.todos;
     const prevTodos = prevState.todos;
 
@@ -117,7 +119,9 @@ class App extends Component {
           </Modal>
         )}
 
-        {/* <Tabs items={tabs} /> */}
+        {/* shouldComponentUpdate(nextProps, nextState */}
+        <Tabs items={tabs} />
+        
         {/* <Clock/> */}
         {/* <button type="button" onClick={this.toggleModal}>
           Open modal
